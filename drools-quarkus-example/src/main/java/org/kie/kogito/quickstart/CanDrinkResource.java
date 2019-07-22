@@ -28,7 +28,6 @@ public class CanDrinkResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String canDrink( @PathParam("name") String name, @PathParam("age") int age ) {
-
         Result result = new Result();
         Person person = new Person( name, age );
 
@@ -40,12 +39,6 @@ public class CanDrinkResource {
         session.insert(result);
         session.insert(person);
         session.fireAllRules();
-
-//        SessionMemory memory = new SessionMemory();
-//        memory.add(result);
-//        memory.add(person);
-//
-//        ruleUnit.evaluate(memory);
 
         return result.toString();
     }
