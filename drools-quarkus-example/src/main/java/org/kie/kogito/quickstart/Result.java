@@ -47,7 +47,7 @@ public class Result {
 
     @Override
     public String toString() {
-        return value.toString();
+        return value == null ? "value=null" : value.toString();
     }
 
     @Override
